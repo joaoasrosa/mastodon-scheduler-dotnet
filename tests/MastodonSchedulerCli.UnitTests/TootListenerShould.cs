@@ -19,4 +19,14 @@ public class TootListenerShould
     {
         Check.ThatCode(() => new TootListener(new Guid().ToString())).Throws<DirectoryNotFoundException>();
     }
+
+    [Fact]
+    public void PublishToot_WhenNoMediaIsAttached()
+    {
+        var folderWithToot = Given.A.Toot.WithoutAttachedMedia;
+
+        var tootListener = new TootListener(folderWithToot);
+
+        Check.That(true).IsFalse();
+    }
 }
