@@ -13,4 +13,10 @@ public class TootListenerShould
     {
         Check.ThatCode(() => new TootListener(folderWithToots)).Throws<ArgumentException>();
     }
+
+    [Fact]
+    public void ThrowDirectoryNotFoundException_WhenConfiguredPathDoesNotExists()
+    {
+        Check.ThatCode(() => new TootListener(new Guid().ToString())).Throws<DirectoryNotFoundException>();
+    }
 }
