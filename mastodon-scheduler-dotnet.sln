@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MastodonSchedulerCli", "src
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{AC47F700-D1CF-42B1-B6C7-BCD3740ED2D4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9243A1BE-9963-41A9-8258-6A97D742C3D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MastodonSchedulerCli.UnitTests", "tests\MastodonSchedulerCli.UnitTests\MastodonSchedulerCli.UnitTests.csproj", "{D4A6EE6B-F801-4021-B4E1-DF1FEBC710C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +18,13 @@ Global
 		{B90AC47D-69A5-4A14-B532-1D6F7B2C8AC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B90AC47D-69A5-4A14-B532-1D6F7B2C8AC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B90AC47D-69A5-4A14-B532-1D6F7B2C8AC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4A6EE6B-F801-4021-B4E1-DF1FEBC710C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4A6EE6B-F801-4021-B4E1-DF1FEBC710C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4A6EE6B-F801-4021-B4E1-DF1FEBC710C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4A6EE6B-F801-4021-B4E1-DF1FEBC710C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B90AC47D-69A5-4A14-B532-1D6F7B2C8AC1} = {AC47F700-D1CF-42B1-B6C7-BCD3740ED2D4}
+		{D4A6EE6B-F801-4021-B4E1-DF1FEBC710C7} = {9243A1BE-9963-41A9-8258-6A97D742C3D2}
 	EndGlobalSection
 EndGlobal
