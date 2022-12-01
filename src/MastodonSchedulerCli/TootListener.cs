@@ -6,7 +6,20 @@ public class TootListener
     {
         var watcher = new FileSystemWatcher(folderWithToots);
 
+        watcher.NotifyFilter = NotifyFilters.Attributes
+                               | NotifyFilters.CreationTime
+                               | NotifyFilters.DirectoryName
+                               | NotifyFilters.FileName
+                               | NotifyFilters.LastAccess
+                               | NotifyFilters.LastWrite
+                               | NotifyFilters.Security
+                               | NotifyFilters.Size;
+
         watcher.Changed += OnChanged;
+
+        watcher.Filter = "*.md";
+        watcher.IncludeSubdirectories = true;
+        watcher.EnableRaisingEvents = true;
     }
 
     private void OnChanged(object sender, FileSystemEventArgs e)
