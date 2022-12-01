@@ -4,6 +4,9 @@ public class TootListener
 {
     public TootListener(string folderWithToots)
     {
+        if (string.IsNullOrWhiteSpace(folderWithToots))
+            throw new ArgumentException("Value cannot be null or whitespace.", nameof(folderWithToots));
+
         var watcher = new FileSystemWatcher(folderWithToots);
 
         watcher.NotifyFilter = NotifyFilters.Attributes
