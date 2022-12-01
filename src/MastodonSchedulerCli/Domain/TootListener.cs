@@ -7,6 +7,9 @@ public class TootListener
         if (string.IsNullOrWhiteSpace(folderWithToots))
             throw new ArgumentException("Value cannot be null or whitespace.", nameof(folderWithToots));
 
+        if (!Directory.Exists(folderWithToots))
+            throw new DirectoryNotFoundException($"'{folderWithToots}' does not exist");
+
         var watcher = new FileSystemWatcher(folderWithToots);
 
         watcher.NotifyFilter = NotifyFilters.Attributes
