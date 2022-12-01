@@ -1,3 +1,5 @@
+using Mastonet;
+
 namespace MastodonSchedulerCli.UnitTests;
 
 public static class Given
@@ -8,8 +10,10 @@ public static class Given
         {
             public static string WithoutAttachedMedia
             {
-                get { return String.Empty; }
+                get { return string.Empty; }
             }
         }
+
+        public static MastodonClient MastodonClient => new MastodonClient(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
     }
 }

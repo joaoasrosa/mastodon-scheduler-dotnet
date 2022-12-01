@@ -1,14 +1,20 @@
+using Mastonet;
+
 namespace MastodonSchedulerCli.Domain;
 
 public class TootListener
 {
-    public TootListener(string folderWithToots)
+    private readonly MastodonClient _mastodonClient;
+
+    public TootListener(string folderWithToots, MastodonClient mastodonClient)
     {
         if (string.IsNullOrWhiteSpace(folderWithToots))
             throw new ArgumentException("Value cannot be null or whitespace.", nameof(folderWithToots));
 
         if (!Directory.Exists(folderWithToots))
             throw new DirectoryNotFoundException($"'{folderWithToots}' does not exist");
+
+        _mastodonClient = mastodonClient ?? throw new ArgumentNullException(nameof(mastodonClient));
 
         var watcher = new FileSystemWatcher(folderWithToots);
 

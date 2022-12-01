@@ -11,13 +11,15 @@ public class TootListenerShould
     [InlineData(" ")]
     public void ThrowArgumentException_WhenConfiguredPathIsNullEmptyOrWhiteSpace(string folderWithToots)
     {
-        Check.ThatCode(() => new TootListener(folderWithToots)).Throws<ArgumentException>();
+        Check.ThatCode(() => new TootListener(folderWithToots, Given.A.MastodonClient))
+            .Throws<ArgumentException>();
     }
 
     [Fact]
     public void ThrowDirectoryNotFoundException_WhenConfiguredPathDoesNotExists()
     {
-        Check.ThatCode(() => new TootListener(new Guid().ToString())).Throws<DirectoryNotFoundException>();
+        Check.ThatCode(() => new TootListener(new Guid().ToString(), Given.A.MastodonClient))
+            .Throws<DirectoryNotFoundException>();
     }
 
     [Fact]
@@ -25,7 +27,7 @@ public class TootListenerShould
     {
         var folderWithToot = Given.A.Toot.WithoutAttachedMedia;
 
-        var tootListener = new TootListener(folderWithToot);
+        var tootListener = new TootListener(folderWithToot, Given.A.MastodonClient);
 
         Check.That(true).IsFalse();
     }
