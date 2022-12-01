@@ -14,7 +14,7 @@ public class TootListener
         if (!Directory.Exists(folderWithToots))
             throw new DirectoryNotFoundException($"'{folderWithToots}' does not exist");
 
-        _mastodonClient = mastodonClient ?? throw new ArgumentNullException(nameof(mastodonClient));
+        _mastodonClient = mastodonClient;
 
         var watcher = new FileSystemWatcher(folderWithToots);
 
