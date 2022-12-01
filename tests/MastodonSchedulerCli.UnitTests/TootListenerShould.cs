@@ -9,8 +9,8 @@ public class TootListenerShould
     [InlineData(null)]
     [InlineData("")]
     [InlineData(" ")]
-    public void ThrowExceptionXXX_WhenConfiguredPathIsNullEmptyOrWhiteSpace(string folderWithToots)
+    public void ThrowArgumentException_WhenConfiguredPathIsNullEmptyOrWhiteSpace(string folderWithToots)
     {
-        Check.ThatCode(() => new TootListener(folderWithToots)).Throws<ArgumentNullException>();
+        Check.ThatCode(() => new TootListener(folderWithToots)).Throws<ArgumentException>();
     }
 }
