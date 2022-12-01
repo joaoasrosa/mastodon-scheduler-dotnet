@@ -1,4 +1,4 @@
-namespace MastodonSchedulerCli;
+namespace MastodonSchedulerCli.Domain;
 
 public class TootListener
 {
