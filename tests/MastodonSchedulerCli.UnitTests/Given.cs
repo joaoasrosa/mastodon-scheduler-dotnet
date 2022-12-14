@@ -8,10 +8,7 @@ public static class Given
     {
         public static class Toot
         {
-            public static string WithoutAttachedMedia
-            {
-                get { return string.Empty; }
-            }
+            public static string WithoutAttachedMedia => string.Empty;
         }
 
         public static MastodonClient MastodonClient => new MastodonClient(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
