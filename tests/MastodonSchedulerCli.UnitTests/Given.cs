@@ -11,6 +11,6 @@ public static class Given
             public static string WithoutAttachedMedia => string.Empty;
         }
 
-        public static MastodonClient MastodonClient => new MastodonClient(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
+        public static MastodonClient MastodonClient => new(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
     }
 }
