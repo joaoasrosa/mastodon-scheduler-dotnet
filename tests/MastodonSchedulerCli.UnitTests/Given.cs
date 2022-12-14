@@ -12,5 +12,10 @@ public static class Given
         }
 
         public static MastodonClient MastodonClient => new(Guid.NewGuid().ToString(), Guid.NewGuid().ToString());
+
+        public static MastodonClient MastodonClientWithHttpClient(HttpClient httpClient)
+        {
+            return new MastodonClient(Guid.NewGuid().ToString(), Guid.NewGuid().ToString(), httpClient);
+        }
     }
 }
